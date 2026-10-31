@@ -1,0 +1,565 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ar" lang="ar" dir="rtl">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>السيارات - مكتب تأجير السيارات</title>
+    <link rel="stylesheet" href="Style.css" />
+    <link rel="icon" type="image/svg+xml" href="images/logo.svg" />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" type="text/javascript"></script>
+</head>
+
+<body>
+    <!-- الترويسة الرئيسية وشريط التنقل -->
+    <header>
+        <div class="header-container">
+            <div class="brand-wrapper">
+                <img src="images/logo.svg" alt="شعار مكتب تأجير السيارات" class="brand-logo" />
+                <div>
+                    <h1>مكتب تأجير السيارات</h1>
+                    <p class="brand-subtitle">Car Rental Website - SVU Modern Fleet Services</p>
+                </div>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="home.html">الرئيسية</a></li>
+                    <li><a href="AboutUs.html">من نحن</a></li>
+                    <li><a href="Cars.html" class="active">السيارات</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- بطاقة البانر الترحيبي لأسطول السيارات -->
+        <div class="hero-card">
+            <h2>أسطول السيارات المتوفر للحجز الفوري</h2>
+            <p>استعرض أسطول سياراتنا المميز، اضغط على مربع "إظهار التفاصيل" لاستعراض مواصفات وصور السيارة، حدد السيارة أو السيارات المرغوبة، ثم اضغط على زر "متابعة" لتعبئة نموذج طلب الحجز.</p>
+        </div>
+
+        <!-- 1.3 جدول أسطول السيارات المتوفرة -->
+        <section>
+            <h2>جدول السيارات المتوفرة للتأجير</h2>
+            <div class="table-responsive">
+                <table id="carsTable">
+                    <thead>
+                        <tr>
+                            <th>الرمز</th>
+                            <th>الموديل</th>
+                            <th>سنة الصنع</th>
+                            <th>السعر اليومي</th>
+                            <th>إظهار التفاصيل</th>
+                            <th>اختيار</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- سيارة 1: Toyota Corolla -->
+                        <tr>
+                            <td><span class="badge badge-gold">CR-001</span></td>
+                            <td class="car-model-name"><strong>Toyota Corolla</strong></td>
+                            <td>2023</td>
+                            <td class="price-cell">250000 ل.س</td>
+                            <td><input type="checkbox" class="show-details-cb" data-target="details-1" /></td>
+                            <td><input type="checkbox" class="select-car-cb" value="CR-001" data-price="250000" /></td>
+                        </tr>
+                        <tr id="details-1" class="car-details-row" style="display: none;">
+                            <td colspan="6">
+                                <div class="car-details">
+                                    <div class="specs-badge-list">
+                                        <div class="spec-item"><strong>نوع الوقود:</strong> بنزين اقتصادي</div>
+                                        <div class="spec-item"><strong>ناقل الحركة:</strong> أوتوماتيك CVT</div>
+                                        <div class="spec-item"><strong>عدد المقاعد:</strong> 5 مقاعد</div>
+                                        <div class="spec-item"><strong>عداد الكيلومترات:</strong> 15,000 كم</div>
+                                        <div class="spec-item"><strong>اللون:</strong> أبيض لؤلؤي</div>
+                                    </div>
+                                    <div class="car-images-container">
+                                        <div class="car-image-card">
+                                            <img src="images/corolla_1.jpg" alt="Toyota Corolla - مظهر أمامي" />
+                                            <div class="car-image-caption">مظهر أمامي عصري</div>
+                                        </div>
+                                        <div class="car-image-card">
+                                            <img src="images/corolla_2.jpg" alt="Toyota Corolla - مظهر خلفي" />
+                                            <div class="car-image-caption">مظهر خلفي ديناميكي</div>
+                                        </div>
+                                        <div class="car-image-card">
+                                            <img src="images/corolla_3.jpg" alt="Toyota Corolla - إطلالة جانبية" />
+                                            <div class="car-image-caption">إطلالة جانبية أنيقة</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+
+                        <!-- سيارة 2: Kia Sportage -->
+                        <tr>
+                            <td><span class="badge badge-gold">CR-002</span></td>
+                            <td class="car-model-name"><strong>Kia Sportage</strong></td>
+                            <td>2022</td>
+                            <td class="price-cell">400000 ل.س</td>
+                            <td><input type="checkbox" class="show-details-cb" data-target="details-2" /></td>
+                            <td><input type="checkbox" class="select-car-cb" value="CR-002" data-price="400000" /></td>
+                        </tr>
+                        <tr id="details-2" class="car-details-row" style="display: none;">
+                            <td colspan="6">
+                                <div class="car-details">
+                                    <div class="specs-badge-list">
+                                        <div class="spec-item"><strong>نوع الوقود:</strong> بنزين دفع رباعي (AWD)</div>
+                                        <div class="spec-item"><strong>ناقل الحركة:</strong> أوتوماتيك تيبترونيك</div>
+                                        <div class="spec-item"><strong>عدد المقاعد:</strong> 5 مقاعد فسيحة</div>
+                                        <div class="spec-item"><strong>عداد الكيلومترات:</strong> 30,000 كم</div>
+                                        <div class="spec-item"><strong>اللون:</strong> برتقالي رياضي / أسود</div>
+                                    </div>
+                                    <div class="car-images-container">
+                                        <div class="car-image-card">
+                                            <img src="images/sportage_1.jpg" alt="Kia Sportage - مظهر أمامي" />
+                                            <div class="car-image-caption">واجهة أمامية هجومية</div>
+                                        </div>
+                                        <div class="car-image-card">
+                                            <img src="images/sportage_2.jpg" alt="Kia Sportage - مظهر جانبي" />
+                                            <div class="car-image-caption">هيكل دفع رباعي رياضي</div>
+                                        </div>
+                                        <div class="car-image-card">
+                                            <img src="images/sportage_3.jpg" alt="Kia Sportage - مظهر خلفي" />
+                                            <div class="car-image-caption">تصميم خلفي جذاب</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+
+                        <!-- سيارة 3: Hyundai Elantra -->
+                        <tr>
+                            <td><span class="badge badge-gold">CR-003</span></td>
+                            <td class="car-model-name"><strong>Hyundai Elantra</strong></td>
+                            <td>2024</td>
+                            <td class="price-cell">300000 ل.س</td>
+                            <td><input type="checkbox" class="show-details-cb" data-target="details-3" /></td>
+                            <td><input type="checkbox" class="select-car-cb" value="CR-003" data-price="300000" /></td>
+                        </tr>
+                        <tr id="details-3" class="car-details-row" style="display: none;">
+                            <td colspan="6">
+                                <div class="car-details">
+                                    <div class="specs-badge-list">
+                                        <div class="spec-item"><strong>نوع الوقود:</strong> بنزين حقن مباشر</div>
+                                        <div class="spec-item"><strong>ناقل الحركة:</strong> أوتوماتيك ذكي (IVT)</div>
+                                        <div class="spec-item"><strong>عدد المقاعد:</strong> 5 مقاعد</div>
+                                        <div class="spec-item"><strong>عداد الكيلومترات:</strong> 5,000 كم</div>
+                                        <div class="spec-item"><strong>اللون:</strong> رمادي ميتاليك</div>
+                                    </div>
+                                    <div class="car-images-container">
+                                        <div class="car-image-card">
+                                            <img src="images/elantra_1.jpg" alt="Hyundai Elantra - مظهر أمامي" />
+                                            <div class="car-image-caption">إطلالة أمامية مستقبلية</div>
+                                        </div>
+                                        <div class="car-image-card">
+                                            <img src="images/elantra_2.jpg" alt="Hyundai Elantra - مظهر خلفي" />
+                                            <div class="car-image-caption">إضاءة خلفية متصلة</div>
+                                        </div>
+                                        <div class="car-image-card">
+                                            <img src="images/elantra_3.jpg" alt="Hyundai Elantra - المقصورة الداخلية" />
+                                            <div class="car-image-caption">مقصورة تكنولوجية فاخرة</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+
+                        <!-- سيارة 4: Chevrolet Spark -->
+                        <tr>
+                            <td><span class="badge badge-gold">CR-004</span></td>
+                            <td class="car-model-name"><strong>Chevrolet Spark</strong></td>
+                            <td>2021</td>
+                            <td class="price-cell">180000 ل.س</td>
+                            <td><input type="checkbox" class="show-details-cb" data-target="details-4" /></td>
+                            <td><input type="checkbox" class="select-car-cb" value="CR-004" data-price="180000" /></td>
+                        </tr>
+                        <tr id="details-4" class="car-details-row" style="display: none;">
+                            <td colspan="6">
+                                <div class="car-details">
+                                    <div class="specs-badge-list">
+                                        <div class="spec-item"><strong>نوع الوقود:</strong> بنزين اقتصادي جداً</div>
+                                        <div class="spec-item"><strong>ناقل الحركة:</strong> يدوي (عادي) 5 سرعات</div>
+                                        <div class="spec-item"><strong>عدد المقاعد:</strong> 4 مقاعد</div>
+                                        <div class="spec-item"><strong>عداد الكيلومترات:</strong> 50,000 كم</div>
+                                        <div class="spec-item"><strong>اللون:</strong> برتقالي لامع</div>
+                                    </div>
+                                    <div class="car-images-container">
+                                        <div class="car-image-card">
+                                            <img src="images/spark_1.jpg" alt="Chevrolet Spark - مظهر أمامي" />
+                                            <div class="car-image-caption">حجم مدمج ومثالي للمدينة</div>
+                                        </div>
+                                        <div class="car-image-card">
+                                            <img src="images/spark_2.jpg" alt="Chevrolet Spark - مظهر خلفي" />
+                                            <div class="car-image-caption">تصميم عملي ورشيق</div>
+                                        </div>
+                                        <div class="car-image-card">
+                                            <img src="images/spark_3.jpg" alt="Chevrolet Spark - المعرض" />
+                                            <div class="car-image-caption">جاهزة للانطلاق فوراً</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+
+                        <!-- سيارة 5: Nissan Sunny -->
+                        <tr>
+                            <td><span class="badge badge-gold">CR-005</span></td>
+                            <td class="car-model-name"><strong>Nissan Sunny</strong></td>
+                            <td>2023</td>
+                            <td class="price-cell">220000 ل.س</td>
+                            <td><input type="checkbox" class="show-details-cb" data-target="details-5" /></td>
+                            <td><input type="checkbox" class="select-car-cb" value="CR-005" data-price="220000" /></td>
+                        </tr>
+                        <tr id="details-5" class="car-details-row" style="display: none;">
+                            <td colspan="6">
+                                <div class="car-details">
+                                    <div class="specs-badge-list">
+                                        <div class="spec-item"><strong>نوع الوقود:</strong> بنزين اقتصادي</div>
+                                        <div class="spec-item"><strong>ناقل الحركة:</strong> أوتوماتيك Xtronic CVT</div>
+                                        <div class="spec-item"><strong>عدد المقاعد:</strong> 5 مقاعد</div>
+                                        <div class="spec-item"><strong>عداد الكيلومترات:</strong> 12,000 كم</div>
+                                        <div class="spec-item"><strong>اللون:</strong> أزرق بحري ميتاليك</div>
+                                    </div>
+                                    <div class="car-images-container">
+                                        <div class="car-image-card">
+                                            <img src="images/sunny_1.jpg" alt="Nissan Sunny - مظهر أمامي" />
+                                            <div class="car-image-caption">واجهة أمامية مميزة</div>
+                                        </div>
+                                        <div class="car-image-card">
+                                            <img src="images/sunny_2.jpg" alt="Nissan Sunny - مظهر جانبي" />
+                                            <div class="car-image-caption">خطوط جانبية انسيابية</div>
+                                        </div>
+                                        <div class="car-image-card">
+                                            <img src="images/sunny_3.jpg" alt="Nissan Sunny - مظهر خلفي" />
+                                            <div class="car-image-caption">مساحة تخزين خلفية واسعة</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+
+                        <!-- سيارة 6: Mazda 3 -->
+                        <tr>
+                            <td><span class="badge badge-gold">CR-006</span></td>
+                            <td class="car-model-name"><strong>Mazda 3</strong></td>
+                            <td>2023</td>
+                            <td class="price-cell">320000 ل.س</td>
+                            <td><input type="checkbox" class="show-details-cb" data-target="details-6" /></td>
+                            <td><input type="checkbox" class="select-car-cb" value="CR-006" data-price="320000" /></td>
+                        </tr>
+                        <tr id="details-6" class="car-details-row" style="display: none;">
+                            <td colspan="6">
+                                <div class="car-details">
+                                    <div class="specs-badge-list">
+                                        <div class="spec-item"><strong>نوع الوقود:</strong> بنزين SkyActiv-G</div>
+                                        <div class="spec-item"><strong>ناقل الحركة:</strong> أوتوماتيك 6 سرعات</div>
+                                        <div class="spec-item"><strong>عدد المقاعد:</strong> 5 مقاعد</div>
+                                        <div class="spec-item"><strong>عداد الكيلومترات:</strong> 18,000 كم</div>
+                                        <div class="spec-item"><strong>اللون:</strong> رمادي كربوني فاخر</div>
+                                    </div>
+                                    <div class="car-images-container">
+                                        <div class="car-image-card">
+                                            <img src="images/mazda_1.jpg" alt="Mazda 3 - مظهر أمامي جانبي" />
+                                            <div class="car-image-caption">فلسفة تصميم كودو اليابانية</div>
+                                        </div>
+                                        <div class="car-image-card">
+                                            <img src="images/mazda_2.jpg" alt="Mazda 3 - مظهر خلفي" />
+                                            <div class="car-image-caption">تصميم خلفي راقٍ</div>
+                                        </div>
+                                        <div class="car-image-card">
+                                            <img src="images/mazda_3.jpg" alt="Mazda 3 - مظهر أمامي" />
+                                            <div class="car-image-caption">ديناميكية قيادة متفوقة</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+
+                        <!-- سيارة 7: Toyota Camry -->
+                        <tr>
+                            <td><span class="badge badge-gold">CR-007</span></td>
+                            <td class="car-model-name"><strong>Toyota Camry</strong></td>
+                            <td>2024</td>
+                            <td class="price-cell">450000 ل.س</td>
+                            <td><input type="checkbox" class="show-details-cb" data-target="details-7" /></td>
+                            <td><input type="checkbox" class="select-car-cb" value="CR-007" data-price="450000" /></td>
+                        </tr>
+                        <tr id="details-7" class="car-details-row" style="display: none;">
+                            <td colspan="6">
+                                <div class="car-details">
+                                    <div class="specs-badge-list">
+                                        <div class="spec-item"><strong>نوع الوقود:</strong> هجين متطور (هايبرد Hybrid)</div>
+                                        <div class="spec-item"><strong>ناقل الحركة:</strong> أوتوماتيك e-CVT</div>
+                                        <div class="spec-item"><strong>عدد المقاعد:</strong> 5 مقاعد VIP</div>
+                                        <div class="spec-item"><strong>عداد الكيلومترات:</strong> 8,000 كم</div>
+                                        <div class="spec-item"><strong>اللون:</strong> أبيض لؤلؤي ملكي</div>
+                                    </div>
+                                    <div class="car-images-container">
+                                        <div class="car-image-card">
+                                            <img src="images/camry_1.jpg" alt="Toyota Camry - مظهر أمامي" />
+                                            <div class="car-image-caption">فخامة السيدان الأولى عالمياً</div>
+                                        </div>
+                                        <div class="car-image-card">
+                                            <img src="images/camry_2.jpg" alt="Toyota Camry - مظهر خلفي" />
+                                            <div class="car-image-caption">حضور مهيب وثبات عالٍ</div>
+                                        </div>
+                                        <div class="car-image-card">
+                                            <img src="images/camry_3.jpg" alt="Toyota Camry - مظهر جانبي" />
+                                            <div class="car-image-caption">أعلى معايير الهدوء والراحة</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+
+                        <!-- سيارة 8: Honda Civic -->
+                        <tr>
+                            <td><span class="badge badge-gold">CR-008</span></td>
+                            <td class="car-model-name"><strong>Honda Civic</strong></td>
+                            <td>2023</td>
+                            <td class="price-cell">340000 ل.س</td>
+                            <td><input type="checkbox" class="show-details-cb" data-target="details-8" /></td>
+                            <td><input type="checkbox" class="select-car-cb" value="CR-008" data-price="340000" /></td>
+                        </tr>
+                        <tr id="details-8" class="car-details-row" style="display: none;">
+                            <td colspan="6">
+                                <div class="car-details">
+                                    <div class="specs-badge-list">
+                                        <div class="spec-item"><strong>نوع الوقود:</strong> بنزين تيربو VTEC Turbo</div>
+                                        <div class="spec-item"><strong>ناقل الحركة:</strong> أوتوماتيك CVT الرياضي</div>
+                                        <div class="spec-item"><strong>عدد المقاعد:</strong> 5 مقاعد</div>
+                                        <div class="spec-item"><strong>عداد الكيلومترات:</strong> 14,000 كم</div>
+                                        <div class="spec-item"><strong>اللون:</strong> فضي ميتاليك</div>
+                                    </div>
+                                    <div class="car-images-container">
+                                        <div class="car-image-card">
+                                            <img src="images/civic_1.jpg" alt="Honda Civic - مظهر أمامي" />
+                                            <div class="car-image-caption">طابع رياضي جريء</div>
+                                        </div>
+                                        <div class="car-image-card">
+                                            <img src="images/civic_2.jpg" alt="Honda Civic - مظهر خلفي" />
+                                            <div class="car-image-caption">خطوط إيروديناميكية حادة</div>
+                                        </div>
+                                        <div class="car-image-card">
+                                            <img src="images/civic_3.jpg" alt="Honda Civic - المقصورة الداخلية" />
+                                            <div class="car-image-caption">مقصورة رقمية حديثة</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+
+                        <!-- سيارة 9: Hyundai Tucson -->
+                        <tr>
+                            <td><span class="badge badge-gold">CR-009</span></td>
+                            <td class="car-model-name"><strong>Hyundai Tucson</strong></td>
+                            <td>2023</td>
+                            <td class="price-cell">420000 ل.س</td>
+                            <td><input type="checkbox" class="show-details-cb" data-target="details-9" /></td>
+                            <td><input type="checkbox" class="select-car-cb" value="CR-009" data-price="420000" /></td>
+                        </tr>
+                        <tr id="details-9" class="car-details-row" style="display: none;">
+                            <td colspan="6">
+                                <div class="car-details">
+                                    <div class="specs-badge-list">
+                                        <div class="spec-item"><strong>نوع الوقود:</strong> هجين توربو Smartstream</div>
+                                        <div class="spec-item"><strong>ناقل الحركة:</strong> أوتوماتيك 6 سرعات HTRAC</div>
+                                        <div class="spec-item"><strong>عدد المقاعد:</strong> 5 مقاعد دفع رباعي</div>
+                                        <div class="spec-item"><strong>عداد الكيلومترات:</strong> 22,000 كم</div>
+                                        <div class="spec-item"><strong>اللون:</strong> رمادي داكن فانتوم</div>
+                                    </div>
+                                    <div class="car-images-container">
+                                        <div class="car-image-card">
+                                            <img src="images/tucson_1.jpg" alt="Hyundai Tucson - مظهر أمامي" />
+                                            <div class="car-image-caption">أضواء نهارية بارامتريك مخفية</div>
+                                        </div>
+                                        <div class="car-image-card">
+                                            <img src="images/tucson_2.jpg" alt="Hyundai Tucson - مظهر خلفي" />
+                                            <div class="car-image-caption">مصابيح خلفية بتصميم أنياب النمر</div>
+                                        </div>
+                                        <div class="car-image-card">
+                                            <img src="images/tucson_3.jpg" alt="Hyundai Tucson - مظهر جانبي" />
+                                            <div class="car-image-caption">مركبة SUV عائلية متكاملة</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+
+                        <!-- سيارة 10: Kia Cerato -->
+                        <tr>
+                            <td><span class="badge badge-gold">CR-010</span></td>
+                            <td class="car-model-name"><strong>Kia Cerato</strong></td>
+                            <td>2022</td>
+                            <td class="price-cell">280000 ل.س</td>
+                            <td><input type="checkbox" class="show-details-cb" data-target="details-10" /></td>
+                            <td><input type="checkbox" class="select-car-cb" value="CR-010" data-price="280000" /></td>
+                        </tr>
+                        <tr id="details-10" class="car-details-row" style="display: none;">
+                            <td colspan="6">
+                                <div class="car-details">
+                                    <div class="specs-badge-list">
+                                        <div class="spec-item"><strong>نوع الوقود:</strong> بنزين اقتصادي MPI</div>
+                                        <div class="spec-item"><strong>ناقل الحركة:</strong> أوتوماتيك 6 سرعات</div>
+                                        <div class="spec-item"><strong>عدد المقاعد:</strong> 5 مقاعد</div>
+                                        <div class="spec-item"><strong>عداد الكيلومترات:</strong> 25,000 كم</div>
+                                        <div class="spec-item"><strong>اللون:</strong> أبيض ثلجي</div>
+                                    </div>
+                                    <div class="car-images-container">
+                                        <div class="car-image-card">
+                                            <img src="images/cerato_1.jpg" alt="Kia Cerato - مظهر أمامي" />
+                                            <div class="car-image-caption">شباك أنف النمر الشهير</div>
+                                        </div>
+                                        <div class="car-image-card">
+                                            <img src="images/cerato_2.jpg" alt="Kia Cerato - مظهر جانبي" />
+                                            <div class="car-image-caption">أبعاد عملية ومتوازنة</div>
+                                        </div>
+                                        <div class="car-image-card">
+                                            <img src="images/cerato_3.jpg" alt="Kia Cerato - مظهر خلفي" />
+                                            <div class="car-image-caption">ثبات وراحة على الطرقات</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- زر المتابعة بعد اختيار السيارة -->
+            <div style="text-align: center; margin-top: 30px;">
+                <button type="button" id="continueBtn" class="btn btn-primary">متابعة لتأكيد الحجز</button>
+            </div>
+        </section>
+
+        <!-- 1.4 نموذج الحجز الإلكتروني المتقدم (XHTML Form) -->
+        <section id="reservationSection" style="display: none;">
+            <h2>نموذج طلب حجز السيارة</h2>
+            <p>يرجى إدخال معلومات الحجز بدقة أدناه (الحقول المحددة بالنجمة * إلزامية، وباقي الحقول تقبل القيمة الفارغة):</p>
+            
+            <form id="reservationForm" action="#" method="post">
+                <fieldset>
+                    <legend>بيانات مقدم الطلب وفترة التأجير</legend>
+
+                    <div class="form-grid">
+                        <!-- 1. الاسم الكامل -->
+                        <div class="form-group">
+                            <label for="fullName">الاسم الكامل لمقدم الطلب (أحرف هجائية عربية فقط):</label>
+                            <input type="text" id="fullName" name="fullName" placeholder="مثال: ماغي جورج وكيل" />
+                            <div class="input-hint">يقبل القيمة الفارغة، وإن وُجد يجب أن يكون بالأحرف العربية فقط.</div>
+                        </div>
+
+                        <!-- 2. الرقم الوطني -->
+                        <div class="form-group">
+                            <label for="nationalId">الرقم الوطني <span class="required-mark">* (إلزامي - 11 خانة):</span></label>
+                            <input type="text" id="nationalId" name="nationalId" maxlength="11" placeholder="مثال: 01012345678" />
+                            <div class="input-hint">إلزامي، 11 خانة رقمية، أول خانتين للمحافظة (01 إلى 14).</div>
+                        </div>
+
+                        <!-- 3. تاريخ بداية التأجير -->
+                        <div class="form-group">
+                            <label for="startDate">تاريخ بداية التأجير <span class="required-mark">* (إلزامي - dd-mm-yyyy):</span></label>
+                            <input type="text" id="startDate" name="startDate" placeholder="مثال: 01-11-2026" />
+                            <div class="input-hint">إلزامي، بصيغة dd-mm-yyyy (يوم-شهر-سنة).</div>
+                        </div>
+
+                        <!-- 4. تاريخ نهاية التأجير -->
+                        <div class="form-group">
+                            <label for="endDate">تاريخ نهاية التأجير <span class="required-mark">* (إلزامي - dd-mm-yyyy):</span></label>
+                            <input type="text" id="endDate" name="endDate" placeholder="مثال: 10-11-2026" />
+                            <div class="input-hint">إلزامي، ويجب أن يكون لاحقاً لتاريخ بداية التأجير.</div>
+                        </div>
+
+                        <!-- 5. رقم الموبايل -->
+                        <div class="form-group">
+                            <label for="mobileNumber">رقم الموبايل (شبكة Syriatel أو MTN):</label>
+                            <input type="text" id="mobileNumber" name="mobileNumber" maxlength="10" placeholder="مثال: 0933112233 أو 0944112233" />
+                            <div class="input-hint">يقبل القيمة الفارغة، وإن وُجد يجب أن يطابق شبكتي Syriatel أو MTN.</div>
+                        </div>
+
+                        <!-- 6. البريد الإلكتروني -->
+                        <div class="form-group">
+                            <label for="email">البريد الإلكتروني:</label>
+                            <input type="text" id="email" name="email" placeholder="مثال: client@example.com" />
+                            <div class="input-hint">يقبل القيمة الفارغة، وإن وُجد يجب أن تكون صيغته صحيحة.</div>
+                        </div>
+                    </div>
+                </fieldset>
+
+                <!-- زر الإرسال -->
+                <div style="text-align: center; margin-top: 25px;">
+                    <button type="submit" id="submitBtn" class="btn btn-primary">إرسال طلب الحجز</button>
+                </div>
+            </form>
+        </section>
+
+        <!-- نافذة النتيجة المنبثقة التفاعلية المدمجة (Result Modal) -->
+        <div id="resultModal" class="modal-overlay">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3>ملخص وتفاصيل طلب الحجز</h3>
+                    <button type="button" class="modal-close-btn" aria-label="إغلاق">&#215;</button>
+                </div>
+                <div class="modal-body">
+                    <div class="modal-item">
+                        <span class="modal-item-label">اسم مقدم الطلب:</span>
+                        <span class="modal-item-value" id="modalClientName">-</span>
+                    </div>
+                    <div class="modal-item">
+                        <span class="modal-item-label">الرقم الوطني:</span>
+                        <span class="modal-item-value" id="modalNationalId">-</span>
+                    </div>
+                    <div class="modal-item">
+                        <span class="modal-item-label">فترة التأجير:</span>
+                        <span class="modal-item-value" id="modalPeriod">-</span>
+                    </div>
+                    <div class="modal-item">
+                        <span class="modal-item-label">السيارات المختارة:</span>
+                        <span class="modal-item-value" id="modalCars">-</span>
+                    </div>
+                    <div class="modal-item">
+                        <span class="modal-item-label">عدد أيام التأجير لكل سيارة:</span>
+                        <span class="modal-item-value" id="modalDays">-</span>
+                    </div>
+                    <div class="modal-item">
+                        <span class="modal-item-label">المبلغ قبل الخصم:</span>
+                        <span class="modal-item-value" id="modalSubtotal">-</span>
+                    </div>
+                    <div class="modal-item">
+                        <span class="modal-item-label">الخصم المطبق:</span>
+                        <span class="modal-item-value" id="modalDiscount">-</span>
+                    </div>
+
+                    <div class="modal-total-box">
+                        <div style="display: flex; justify-content: space-between; align-items: center;">
+                            <span style="font-size: 1.2em; font-weight: 800; color: #ffffff;">المبلغ النهائي المستحق:</span>
+                            <span class="final-price" id="modalFinalPrice">0 ل.س</span>
+                        </div>
+                        <p style="margin: 8px 0 0 0; font-size: 0.9em; color: var(--accent-emerald);">تم تطبيق خصم 10% تلقائياً في حال تجاوزت مدة التأجير 7 أيام وفق شروط الوظيفة.</p>
+                    </div>
+
+                    <div style="text-align: center; margin-top: 25px;">
+                        <button type="button" id="closeModalActionBtn" class="btn btn-blue">إغلاق وتأكيد</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- التذييل -->
+    <footer>
+        <div class="header-container" style="justify-content: center; text-align: center;">
+            <div>
+                <p>&#169; 2026 <span class="footer-highlight">مكتب تأجير السيارات</span> - جميع الحقوق محفوظة.</p>
+                <p>وظيفة مادة تصميم وتطوير تطبيقات الوب (IWB202) - خريف 2025 (F25) - إشراف د. ضياء محمد خلوف - الجامعة الافتراضية السورية SVU</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ملف الجافاسكريبت والمكتبات المعتمدة -->
+    <script src="myFunctions.js" type="text/javascript"></script>
+</body>
+
+</html>
