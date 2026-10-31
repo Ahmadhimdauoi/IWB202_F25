@@ -1,143 +1,127 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 260" width="100%" height="100%">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" width="100%" height="100%">
   <defs>
-    <!-- Dynamic Crimson Red Gradient -->
-    <linearGradient id="crimsonGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#ff4d6d" />
-      <stop offset="50%" stop-color="#e11d48" />
-      <stop offset="100%" stop-color="#9f1239" />
+    <!-- Classic Corporate Blue Gradient -->
+    <linearGradient id="corpBlueGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#2563eb" />
+      <stop offset="50%" stop-color="#1d4ed8" />
+      <stop offset="100%" stop-color="#1e3a8a" />
     </linearGradient>
 
-    <!-- Electric Cyan Gradient -->
-    <linearGradient id="cyanGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#38bdf8" />
-      <stop offset="50%" stop-color="#0284c7" />
-      <stop offset="100%" stop-color="#0369a1" />
+    <!-- Refined Academic Gold Accent Gradient -->
+    <linearGradient id="academicGold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#e5c07b" />
+      <stop offset="50%" stop-color="#d4af37" />
+      <stop offset="100%" stop-color="#a17a22" />
     </linearGradient>
 
-    <!-- Platinum Chrome Metallic Gradient -->
-    <linearGradient id="metalGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+    <!-- Platinum Silver Metallic Gradient -->
+    <linearGradient id="platinumGrad" x1="0%" y1="0%" x2="0%" y2="100%">
       <stop offset="0%" stop-color="#ffffff" />
-      <stop offset="40%" stop-color="#cbd5e1" />
-      <stop offset="70%" stop-color="#64748b" />
-      <stop offset="100%" stop-color="#334155" />
+      <stop offset="45%" stop-color="#e2e8f0" />
+      <stop offset="75%" stop-color="#94a3b8" />
+      <stop offset="100%" stop-color="#475569" />
     </linearGradient>
 
-    <!-- Futuristic Hex Shield Gradient -->
-    <linearGradient id="hexBg" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#182032" />
-      <stop offset="50%" stop-color="#0f1626" />
-      <stop offset="100%" stop-color="#080c14" />
+    <!-- Deep Navy Shield Background -->
+    <linearGradient id="navyBgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1e293b" />
+      <stop offset="60%" stop-color="#0f172a" />
+      <stop offset="100%" stop-color="#0a0f1d" />
     </linearGradient>
 
-    <!-- Ambient Neon Glow -->
-    <radialGradient id="neonPulse" cx="50%" cy="50%" r="50%">
-      <stop offset="0%" stop-color="#ff3366" stop-opacity="0.4" />
-      <stop offset="55%" stop-color="#0284c7" stop-opacity="0.2" />
-      <stop offset="100%" stop-color="#000000" stop-opacity="0" />
-    </radialGradient>
-
-    <!-- Drop Shadows and Glow Filters -->
-    <filter id="hyperGlow" x="-25%" y="-25%" width="150%" height="150%">
-      <feGaussianBlur stdDeviation="6" result="blur" />
-      <feMerge>
-        <feMergeNode in="blur" />
-        <feMergeNode in="SourceGraphic" />
-      </feMerge>
+    <!-- Soft Professional Shadow -->
+    <filter id="softShadow" x="-15%" y="-15%" width="130%" height="130%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#000000" flood-opacity="0.45" />
     </filter>
   </defs>
 
-  <!-- Ambient Neon Backlight -->
-  <circle cx="130" cy="130" r="115" fill="url(#neonPulse)" />
+  <!-- Outer Ring (Academic Crest) -->
+  <circle cx="120" cy="120" r="108" fill="url(#navyBgGrad)" stroke="url(#academicGold)" stroke-width="3" filter="url(#softShadow)" />
+  <circle cx="120" cy="120" r="101" fill="none" stroke="url(#platinumGrad)" stroke-width="1.2" stroke-dasharray="3,3" opacity="0.8" />
 
-  <!-- Outer Aerodynamic Geometric Emblem (Hexagonal Shield) -->
-  <polygon points="130,16 232,58 232,176 130,242 28,176 28,58"
-           fill="url(#hexBg)" 
-           stroke="url(#crimsonGrad)" 
-           stroke-width="4"
-           stroke-linejoin="round" />
+  <!-- Inner Formal Emblem Shield -->
+  <path d="M 120,34 
+           C 152,34 182,44 182,64 
+           C 182,122 156,172 120,196 
+           C 84,172 58,122 58,64 
+           C 58,44 88,34 120,34 Z" 
+        fill="url(#corpBlueGrad)" 
+        stroke="url(#academicGold)" 
+        stroke-width="2.5" 
+        opacity="0.95" />
 
-  <!-- Inner Cyan Tech Accent Border -->
-  <polygon points="130,28 220,65 220,169 130,228 40,169 40,65"
-           fill="none" 
-           stroke="url(#cyanGrad)" 
-           stroke-width="1.8" 
-           stroke-dasharray="6,4" 
-           opacity="0.8" />
+  <!-- Three Academic / Excellence Stars -->
+  <polygon points="120,44 122,50 128,50 123,54 125,60 120,56 115,60 117,54 112,50 118,50" fill="url(#academicGold)" />
+  <polygon points="102,50 103.5,54.5 108,54.5 104.5,57.5 106,62 102,59 98,62 99.5,57.5 96,54.5 100.5,54.5" fill="url(#academicGold)" opacity="0.85" />
+  <polygon points="138,50 139.5,54.5 144,54.5 140.5,57.5 142,62 138,59 134,62 135.5,57.5 132,54.5 136.5,54.5" fill="url(#academicGold)" opacity="0.85" />
 
-  <!-- Speed Wings / Lateral Vents -->
-  <path d="M 45,95 L 85,95 L 75,108 L 38,108 Z" fill="url(#crimsonGrad)" opacity="0.85" />
-  <path d="M 215,95 L 175,95 L 185,108 L 222,108 Z" fill="url(#crimsonGrad)" opacity="0.85" />
+  <!-- Refined Luxury Sedan Silhouette -->
+  <!-- Roofline and Glasshouse -->
+  <path d="M 78,118 
+           C 86,102 100,90 122,88 
+           C 142,86 156,92 164,102 
+           C 168,107 172,113 176,118 
+           C 166,117 156,116 150,110 
+           C 144,102 134,98 122,98 
+           C 106,98 94,104 88,118 Z" 
+        fill="url(#academicGold)" />
 
-  <path d="M 52,118 L 82,118 L 74,129 L 46,129 Z" fill="url(#cyanGrad)" opacity="0.75" />
-  <path d="M 208,118 L 178,118 L 186,129 L 214,129 Z" fill="url(#cyanGrad)" opacity="0.75" />
-
-  <!-- Aerodynamic Sports Car Profile / Silhouette -->
-  <!-- Roofline and Windshield -->
-  <path d="M 68,144 
-           C 78,126 95,108 126,104 
-           C 152,100 174,106 186,120 
-           C 192,127 197,135 204,142 
-           C 192,141 182,141 176,134 
-           C 168,124 154,118 132,118 
-           C 108,118 94,126 84,144 Z" 
-        fill="url(#metalGrad)" />
-
-  <!-- Glass Cockpit / Windshield Tint -->
-  <path d="M 88,140 
-           C 96,126 108,118 128,116 
-           C 148,114 162,120 172,132 
-           L 156,133 
-           C 146,124 136,122 122,124 
-           C 106,126 98,132 94,140 Z" 
-        fill="url(#cyanGrad)" 
-        opacity="0.9" />
-
-  <!-- Car Main Shoulder Line & Body -->
-  <path d="M 44,152 
-           C 54,145 74,144 88,145 
-           C 98,138 112,136 135,136 
-           C 158,136 172,139 184,146 
-           C 198,145 210,147 218,154 
-           C 220,158 216,164 208,165 
-           L 188,165 
-           C 184,156 176,151 166,151 
-           C 156,151 148,157 145,165 
-           L 115,165 
-           C 112,157 104,151 94,151 
-           C 84,151 76,156 72,165 
-           L 50,165 
-           C 42,164 40,158 44,152 Z" 
-        fill="url(#crimsonGrad)" 
-        filter="url(#hyperGlow)" />
-
-  <!-- Front LED Laser Headlight (Left in Arabic / Right physically) -->
-  <polygon points="202,151 216,154 210,158 198,154" fill="#38bdf8" filter="url(#hyperGlow)" />
-  <line x1="216" y1="154" x2="236" y2="158" stroke="#38bdf8" stroke-width="2.5" stroke-linecap="round" />
-
-  <!-- Rear LED Laser Taillight -->
-  <polygon points="46,152 56,150 54,156 44,155" fill="#ff4d6d" filter="url(#hyperGlow)" />
-  <line x1="44" y1="155" x2="24" y2="158" stroke="#ff4d6d" stroke-width="2.5" stroke-linecap="round" />
-
-  <!-- Front Wheel (Alloy Rim & Glowing Caliper) -->
-  <circle cx="166" cy="165" r="14" fill="#0b0f19" stroke="url(#metalGrad)" stroke-width="2.5" />
-  <circle cx="166" cy="165" r="7" fill="url(#cyanGrad)" />
-
-  <!-- Rear Wheel (Alloy Rim & Glowing Caliper) -->
-  <circle cx="94" cy="165" r="14" fill="#0b0f19" stroke="url(#metalGrad)" stroke-width="2.5" />
-  <circle cx="94" cy="165" r="7" fill="url(#crimsonGrad)" />
-
-  <!-- Speed Ground Glow Streak -->
-  <ellipse cx="130" cy="184" rx="85" ry="4" fill="url(#crimsonGrad)" opacity="0.6" filter="url(#hyperGlow)" />
-
-  <!-- Monogram / Typography Text -->
-  <text x="130" y="208" 
-        font-family="'Cairo', sans-serif" 
-        font-size="13" 
-        font-weight="900" 
-        letter-spacing="4" 
+  <path d="M 92,115 
+           C 98,104 108,98 122,96 
+           C 136,94 146,98 152,106 
+           L 142,107 
+           C 134,101 128,100 120,102 
+           C 110,104 102,108 98,115 Z" 
         fill="#ffffff" 
-        text-anchor="middle">CAR RENTAL</text>
+        opacity="0.8" />
 
-  <!-- Star Emblems -->
-  <polygon points="130,68 132,74 138,74 133,78 135,84 130,80 125,84 127,78 122,74 128,74" fill="url(#metalGrad)" />
+  <!-- Car Body Main Shoulder -->
+  <path d="M 64,124 
+           C 72,118 86,117 96,118 
+           C 104,113 116,112 128,112 
+           C 142,112 152,114 160,119 
+           C 168,118 176,120 182,126 
+           C 183,129 180,134 174,135 
+           L 162,135 
+           C 159,128 153,124 145,124 
+           C 137,124 131,128 128,135 
+           L 108,135 
+           C 105,128 99,124 91,124 
+           C 83,124 77,128 74,135 
+           L 68,135 
+           C 62,134 61,128 64,124 Z" 
+        fill="url(#platinumGrad)" />
+
+  <!-- Headlight & Taillight Accents -->
+  <path d="M 178,124 L 184,126 L 180,129 Z" fill="#e2e8f0" />
+  <path d="M 66,124 L 62,126 L 64,129 Z" fill="#f87171" />
+
+  <!-- Wheels (Alloy Wheels & Hubs) -->
+  <circle cx="145" cy="135" r="10.5" fill="#0f172a" stroke="url(#platinumGrad)" stroke-width="2" />
+  <circle cx="145" cy="135" r="4.5" fill="url(#academicGold)" />
+
+  <circle cx="91" cy="135" r="10.5" fill="#0f172a" stroke="url(#platinumGrad)" stroke-width="2" />
+  <circle cx="91" cy="135" r="4.5" fill="url(#academicGold)" />
+
+  <!-- Ground Line Accent -->
+  <line x1="60" y1="148" x2="180" y2="148" stroke="url(#academicGold)" stroke-width="1.8" stroke-linecap="round" opacity="0.75" />
+
+  <!-- Clean Corporate Ribbon & Typography -->
+  <rect x="52" y="162" width="136" height="24" rx="4" fill="#0b1329" stroke="url(#academicGold)" stroke-width="1.2" />
+  <text x="120" y="178" 
+        font-family="'Cairo', 'Tajawal', sans-serif" 
+        font-size="11" 
+        font-weight="700" 
+        letter-spacing="1.5" 
+        fill="#f8fafc" 
+        text-anchor="middle">مكتب تأجير السيارات</text>
+
+  <!-- Subtitle -->
+  <text x="120" y="218" 
+        font-family="'Cairo', sans-serif" 
+        font-size="10" 
+        font-weight="600" 
+        letter-spacing="3" 
+        fill="#94a3b8" 
+        text-anchor="middle">CAR RENTAL SVU</text>
 </svg>
